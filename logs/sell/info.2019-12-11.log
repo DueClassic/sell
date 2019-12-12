@@ -1,6 +1,0 @@
-Starting LoggerTest on DESKTOP-2LVO1NJ with PID 15052 (started by xiaomi in F:\IntelliJ_Project\order)
-No active profile set, falling back to default profiles: default
-Initializing ExecutorService 'applicationTaskExecutor'
-Started LoggerTest in 2.276 seconds (JVM running for 3.252)
-info:cc...
-Shutting down ExecutorService 'applicationTaskExecutor'
