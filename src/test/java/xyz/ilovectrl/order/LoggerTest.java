@@ -18,7 +18,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class LoggerTest {
     @Test
     public void test1(){
-        String name="cc";
+        String name ="cc";
         log.debug("debug...");
         log.info("info:{}...",name);
         log.error("error...");

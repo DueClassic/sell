@@ -10,10 +10,3 @@ spring:
 server:
   servlet:
     context-path: /sell
-
-#logging:
-#  pattern:
-#    console: "%d - %msg%n"
-#  file:
-#    path: logs/selllog.log
-#  level:
