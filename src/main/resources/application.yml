@@ -3,11 +3,29 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 990812
-#    url: jdbc:mysql://cdb-4tmpvvrh.gz.tencentcdb.com:10063/sell?characterEncoding=utf-8&useSSL=false
-    url: jdbc:mysql://192.168.43.184:3306/sell?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://192.168.43.184:3306/sell?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
   jpa:
     show-sql: true
+  jackson:
+    default-property-inclusion: non_null
+
 
 server:
   servlet:
     context-path: /sell
+
+wechat:
+  mpAppId: wxfc2ebe6cb93d8f73
+  mpAppSecret: c69319d3608ac6f8ec498a0c30730f16
+  mchId: 123
+  mchKey: 123
+  keyPath: /test
+  notifyUrl: http://ctrl.mynatapp.cc/sell/pay/notify
+
+projectUrl:
+  wechatMpAuthorize: http://ctrl.mynatapp.cc
+  wechatOpenAuthorize: http://ctrl.mynatapp.cc
+  sell: http://ctrl.mynatapp.cc
+
+
+

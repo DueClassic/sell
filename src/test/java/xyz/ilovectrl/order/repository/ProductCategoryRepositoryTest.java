@@ -36,9 +36,9 @@ public class ProductCategoryRepositoryTest {
 //    @Transactional
     public void saveTest(){
         ProductCategory productCategory=new ProductCategory();
-        productCategory.setCategoryId(5);
-        productCategory.setCategoryName("女生最爱");
-        productCategory.setCategoryType(5);
+        productCategory.setCategoryId(6);
+        productCategory.setCategoryName("热销");
+        productCategory.setCategoryType(6);
         ProductCategory result = repository.save(productCategory);
         System.out.println(result);
         Assert.assertNotNull(result);
