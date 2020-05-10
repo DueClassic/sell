@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 import xyz.ilovectrl.order.dataobject.OrderDetail;
 import xyz.ilovectrl.order.dto.OrderDTO;
@@ -89,6 +90,14 @@ public class OrderServiceImplTest {
         OrderDTO orderDTO=orderService.findOne(ORDER_ID);
         OrderDTO result=orderService.paid(orderDTO);
         Assert.assertEquals(PayStatusEnum.SUCCESS.getCode(),result.getPayStatus());
+    }
+
+    @Test
+    public void list() {
+        PageRequest request=PageRequest.of(4,2);
+        Page<OrderDTO> orderDTOS=orderService.findList(request);
+//        Assert.assertNotEquals(0,orderDTOS.getTotalElements());
+        Assert.assertTrue("查询所有的订单列表",!orderDTOS.isEmpty());
     }
 
 }

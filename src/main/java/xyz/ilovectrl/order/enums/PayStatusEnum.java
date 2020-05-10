@@ -1,14 +1,15 @@
 package xyz.ilovectrl.order.enums;
 
 import lombok.Getter;
+import org.aspectj.apache.bcel.classfile.Code;
 
 /**
  * Created by xiaomi on 2020/2/19.
  */
 @Getter
-public enum PayStatusEnum {
+public enum PayStatusEnum implements CodeEnum {
     WAIT(0,"等待支付"),
-    SUCCESS(1,"支付成功")
+    SUCCESS(1,"支付成功"),
     ;
     private Integer code;
     private String message;

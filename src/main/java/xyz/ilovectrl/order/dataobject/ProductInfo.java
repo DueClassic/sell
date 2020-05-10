@@ -1,10 +1,15 @@
 package xyz.ilovectrl.order.dataobject;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
+import xyz.ilovectrl.order.enums.ProductStatusEnum;
+import xyz.ilovectrl.order.utils.EnumUtil;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * 商品
@@ -12,6 +17,7 @@ import java.math.BigDecimal;
  */
 @Entity
 @Data
+@DynamicUpdate
 public class ProductInfo {
     @Id
     private String productId;
@@ -32,10 +38,19 @@ public class ProductInfo {
     private String productIcon;
 
     /** 状态,0正常,1下架 */
-    private Integer productStatus;
+    private Integer productStatus=ProductStatusEnum.UP.getCode();
 
     /** 类目编号 */
     private Integer categoryType;
+
+    private Date createTime;
+
+    private Date updateTime;
+
+    @JsonIgnore
+    public ProductStatusEnum getProductStatusEnum(){
+        return EnumUtil.getByCode(productStatus,ProductStatusEnum.class);
+    }
 
     @Override
     public String toString() {

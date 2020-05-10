@@ -7,7 +7,7 @@ import lombok.Getter;
  * Created by xiaomi on 2019/12/13.
  */
 @Getter
-public enum ProductStatusEnum {
+public enum ProductStatusEnum implements CodeEnum{
     UP(0,"在架"),
     DOWN(1,"下架")
     ;

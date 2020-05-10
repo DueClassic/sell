@@ -1,13 +1,15 @@
 package xyz.ilovectrl.order.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 import xyz.ilovectrl.order.dataobject.OrderDetail;
+import xyz.ilovectrl.order.enums.OrderStatusEnum;
+import xyz.ilovectrl.order.enums.PayStatusEnum;
+import xyz.ilovectrl.order.utils.EnumUtil;
 import xyz.ilovectrl.order.utils.serializer.Date2LongSerializer;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -52,4 +54,13 @@ public class OrderDTO {
     /*订单列表*/
     private List<OrderDetail> orderDetailList;
 
+    @JsonIgnore
+    public OrderStatusEnum getOrderStatusEnum(){
+        return EnumUtil.getByCode(orderStatus,OrderStatusEnum.class);
+    }
+
+    @JsonIgnore
+    public PayStatusEnum getPayStatusEnum(){
+        return EnumUtil.getByCode(payStatus,PayStatusEnum.class);
+    }
 }
