@@ -51,13 +51,16 @@ public class OrderServiceImpl implements OrderService{
     @Autowired
     private PayService payService;
 
+    /**
+     * 创建订单
+     * @param orderDTO
+     * @return
+     */
     @Override
     @Transactional
     public OrderDTO create(OrderDTO orderDTO) {
-
         String orderId= KeyUtil.genUniqueKey();
         BigDecimal orderAmount=new BigDecimal(BigInteger.ZERO);
-
         //1.查询商品（数量，价格）
         for (OrderDetail orderDetail:orderDTO.getOrderDetailList()){
             ProductInfo productInfo=productService.findOne(orderDetail.getProductId());

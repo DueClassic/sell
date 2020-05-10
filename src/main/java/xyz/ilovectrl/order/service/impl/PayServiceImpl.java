@@ -18,6 +18,7 @@ import xyz.ilovectrl.order.utils.MathUtil;
 
 import java.math.BigDecimal;
 
+
 @Service
 @Slf4j
 public class PayServiceImpl implements PayService {
@@ -38,11 +39,9 @@ public class PayServiceImpl implements PayService {
         payRequest.setOrderName(ORDER_NAME);
         payRequest.setPayTypeEnum(BestPayTypeEnum.WXPAY_H5);
         payRequest.setOrderId(orderDTO.getOrderId());
-
         log.info("【微信支付】发起支付,request={}", JsonUtil.toJson(payRequest));
         PayResponse payResponse=bestPayService.pay(payRequest);
         log.info("【微信支付】发起支付,response={}",JsonUtil.toJson(payResponse));
-
         return payResponse;
     }
 
@@ -54,7 +53,6 @@ public class PayServiceImpl implements PayService {
         //4.支付人（下单人==支付人）
         PayResponse payResponse=bestPayService.asyncNotify(notifyData);
         log.info("【微信支付】异步通知,payResponse={}",JsonUtil.toJson(payResponse));
-
         //查询订单
         OrderDTO orderDTO=orderService.findOne(payResponse.getOrderId());
         //判断订单是否存在
@@ -72,7 +70,6 @@ public class PayServiceImpl implements PayService {
         }
         //修改订单的支付状态
         orderService.paid(orderDTO);
-
         return payResponse;
     }
 

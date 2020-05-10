@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 买家商品
+ * 向买家展示商品列表
  * Created by xiaomi on 2020/2/17.
  */
 @RestController
