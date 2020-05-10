@@ -17,7 +17,7 @@ import xyz.ilovectrl.order.enums.ResultEnum;
 import xyz.ilovectrl.order.exception.SellException;
 import xyz.ilovectrl.order.form.OrderForm;
 import xyz.ilovectrl.order.service.OrderService;
-import xyz.ilovectrl.order.utils.BuyerService;
+import xyz.ilovectrl.order.service.BuyerService;
 import xyz.ilovectrl.order.utils.ResultVOUtil;
 
 import javax.validation.Valid;

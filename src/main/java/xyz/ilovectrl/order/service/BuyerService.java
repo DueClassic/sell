@@ -1,4 +1,4 @@
-package xyz.ilovectrl.order.utils;
+package xyz.ilovectrl.order.service;
 
 import xyz.ilovectrl.order.dto.OrderDTO;
 

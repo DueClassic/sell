@@ -20,7 +20,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/seller/category")
-public class SellCategoryController {
+public class SellerCategoryController {
 
     @Autowired
     private CategoryService categoryService;

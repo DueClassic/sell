@@ -7,7 +7,7 @@ import xyz.ilovectrl.order.dto.OrderDTO;
 import xyz.ilovectrl.order.enums.ResultEnum;
 import xyz.ilovectrl.order.exception.SellException;
 import xyz.ilovectrl.order.service.OrderService;
-import xyz.ilovectrl.order.utils.BuyerService;
+import xyz.ilovectrl.order.service.BuyerService;
 
 /**
  * Created by xiaomi on 2020/2/21.
