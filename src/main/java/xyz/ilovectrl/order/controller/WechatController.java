@@ -33,6 +33,11 @@ public class WechatController {
     @Autowired
     private ProjectUrlConfig projectUrlConfig;
 
+    /**
+     * 买家身份认证
+     * @param returnUrl
+     * @return
+     */
     @GetMapping("/authorize")
     public String authorize(@RequestParam("returnUrl") String returnUrl){
         //1.配置
@@ -58,6 +63,11 @@ public class WechatController {
         return "redirect:"+returnUrl+"?openid="+openId;
     }
 
+    /**
+     * 卖家身份认证
+     * @param returnUrl
+     * @return
+     */
     @GetMapping("qrAuthorize")
     public String qrAuthorize(@RequestParam("returnUrl") String returnUrl){
         String url=projectUrlConfig.getWechatOpenAuthorize()+"/sell/wechat/qrUserInfo";

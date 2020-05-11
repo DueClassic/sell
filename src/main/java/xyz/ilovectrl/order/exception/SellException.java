@@ -1,10 +1,12 @@
 package xyz.ilovectrl.order.exception;
 
+import lombok.Getter;
 import xyz.ilovectrl.order.enums.ResultEnum;
 
 /**
  * Created by xiaomi on 2020/2/20.
  */
+@Getter
 public class SellException extends RuntimeException{
     private Integer code;
 
