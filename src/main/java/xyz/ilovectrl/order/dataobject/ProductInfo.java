@@ -56,6 +56,21 @@ public class ProductInfo implements Serializable {
         return EnumUtil.getByCode(productStatus,ProductStatusEnum.class);
     }
 
+    public ProductInfo addImageHost(String host){
+        if (productIcon.startsWith("//") || productIcon.startsWith("http")) {
+            return this;
+        }
+
+        if (!host.startsWith("http")) {
+            host = "//" + host;
+        }
+        if (!host.endsWith("/")) {
+            host = host + "/";
+        }
+        productIcon = host + productIcon;
+        return this;
+    }
+
     @Override
     public String toString() {
         return "ProductInfo{" +

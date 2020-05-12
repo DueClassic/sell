@@ -33,6 +33,12 @@ projectUrl:
   wechatOpenAuthorize: http://ctrl.mynatapp.cc
   sell: http://ctrl.mynatapp.cc
 
+upyun:
+  bucketName: duoclassic-image
+  userName: duoclassic
+  password: VfOz4y9zryH81gUNABkEJRsHrEUraZqk
+  imageHost: http://duoclassic-image.test.upcdn.net/
+
 
 
 
