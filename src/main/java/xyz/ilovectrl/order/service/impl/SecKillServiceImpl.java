@@ -12,12 +12,10 @@ import java.util.Map;
 
 @Service
 public class SecKillServiceImpl  implements SecKillService {
-
+    //过期时间：10s
     private static final int TIMEOUT=10*1000;
-
     @Autowired
     private RedisLock redisLock;
-
     /**
      * 国庆活动，皮蛋粥特价，限量10000份
      */

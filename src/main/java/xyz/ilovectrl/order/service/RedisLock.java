@@ -12,10 +12,8 @@ import org.springframework.util.StringUtils;
 @Component
 @Slf4j
 public class RedisLock {
-
     @Autowired
     private StringRedisTemplate redisTemplate;
-
     /**
      * 加锁
      * @param key
@@ -41,7 +39,6 @@ public class RedisLock {
         //表示锁已经被占用
         return false;
     }
-
     /**
      * 解锁
      */
